@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <!--This AppBarLayout covers the toolbar and TabLayout-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--  &lt;!&ndash;toolbar is one component which is necessary
+              because if we not use this then title is not shown
+              when project executed&ndash;&gt;
+          <androidx.appcompat.widget.Toolbar
+              android:id="@+id/toolbar"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:layout_scrollFlags="scroll|enterAlways" />-->
+        <!-- TabLayout which contains which is
+             important to show tabs -->
+
+        <EditText
+            android:id="@+id/searchEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Devesh Play"
+            android:drawableStart="@drawable/ic_menu_grey"
+            android:drawableEnd="@drawable/ic_mic_grey"
+            android:drawablePadding="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:padding="10dp"
+            android:layout_margin="8dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColorHint="#939393"
+            android:layout_gravity="center"
+            android:inputType="text"
+            android:autofillHints="" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/mainTl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:tabSelectedTextColor="?attr/colorOnPrimary"
+            app:tabTextColor="#939393"
+            app:tabIndicatorColor="#FFF"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed" />
+
+<!--
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab_tablayout">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/detailsTl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="#FFF"
+                app:tabIndicatorHeight="3dp"
+                app:tabMode="fixed" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+-->
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- view pager is used to open other fragment by using
+         left or right swip-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/parentVp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_marginTop="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</RelativeLayout>

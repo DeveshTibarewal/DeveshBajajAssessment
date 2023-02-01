@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".parentfragments.HomeFragment">
+
+    <!--This AppBarLayout covers the toolbar and TabLayout-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/mainTl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="start"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="scrollable"
+            android:padding="5dp"
+            app:tabSelectedTextColor="?attr/colorPrimary"
+            app:tabPaddingEnd="14dp"
+            app:tabPaddingStart="14dp"
+            app:tabTextColor="#939393" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- view pager is used to open other fragment by using
+         left or right swipe-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/childVp"
+        android:layout_width="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Home Fragment"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+</RelativeLayout>
